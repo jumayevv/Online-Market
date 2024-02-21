@@ -16,7 +16,7 @@ public class OrganizationService implements EntyService<OrganizationDTO> {
     private final OrganizationMapper mapper;
 
     @Override
-    public OrganizationDTO getById(Integer target) {
+    public OrganizationDTO getById(Long target) {
         return mapper.toDTO(repository.getReferenceById(target));
     }
 
@@ -31,7 +31,7 @@ public class OrganizationService implements EntyService<OrganizationDTO> {
     }
 
     @Override
-    public OrganizationDTO update(Integer target, OrganizationDTO info) {
+    public OrganizationDTO update(Long target, OrganizationDTO info) {
         Organization temp = repository.getReferenceById(target);
         temp.setName(info.getName());
         temp.setAddress(info.getAddress());
@@ -41,7 +41,7 @@ public class OrganizationService implements EntyService<OrganizationDTO> {
     }
 
     @Override
-    public void deleteById(Integer target) {
+    public void deleteById(Long target) {
         repository.deleteById(target);
     }
 }

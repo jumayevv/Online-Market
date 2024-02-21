@@ -17,7 +17,7 @@ public class ProductService implements EntyService<ProductDTO> {
     private final ProductMapper mapper;
 
     @Override
-    public ProductDTO getById(Integer target) {
+    public ProductDTO getById(Long target) {
         return mapper.toDTO(repository.getReferenceById(target));
     }
 
@@ -32,7 +32,7 @@ public class ProductService implements EntyService<ProductDTO> {
     }
 
     @Override
-    public ProductDTO update(Integer target, ProductDTO info) {
+    public ProductDTO update(Long target, ProductDTO info) {
         Product temp =  repository.getReferenceById(target);
         temp.setName(info.getName());
         temp.setAmount(info.getAmount());
@@ -42,7 +42,7 @@ public class ProductService implements EntyService<ProductDTO> {
     }
 
     @Override
-    public void deleteById(Integer target) {
+    public void deleteById(Long target) {
         repository.deleteById(target);
     }
 }

@@ -16,7 +16,7 @@ public class AcceptDocService implements EntyService<AcceptDocDTO> {
     private final AcceptDocMapper mapper;
 
     @Override
-    public AcceptDocDTO getById(Integer target) {
+    public AcceptDocDTO getById(Long target) {
         return mapper.toDTO(repository.getReferenceById(target));
     }
 
@@ -31,7 +31,7 @@ public class AcceptDocService implements EntyService<AcceptDocDTO> {
     }
 
     @Override
-    public AcceptDocDTO update(Integer target, AcceptDocDTO info) {
+    public AcceptDocDTO update(Long target, AcceptDocDTO info) {
         AcceptDoc temp = repository.getReferenceById(target);
         temp.setDate(info.getDate());
         temp.setDoc_number(info.getDoc_number());
@@ -41,7 +41,7 @@ public class AcceptDocService implements EntyService<AcceptDocDTO> {
     }
 
     @Override
-    public void deleteById(Integer target) {
+    public void deleteById(Long target) {
         repository.deleteById(target);
     }
 }

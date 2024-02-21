@@ -16,7 +16,7 @@ public class ProductPriceService implements EntyService<ProductPriceDTO> {
     private final ProductPriceREPO repository;
     private final ProductPriceMapper mapper;
     @Override
-    public ProductPriceDTO getById(Integer target) {
+    public ProductPriceDTO getById(Long target) {
         return mapper.toDTO(repository.getReferenceById(target));
     }
 
@@ -31,7 +31,7 @@ public class ProductPriceService implements EntyService<ProductPriceDTO> {
     }
 
     @Override
-    public ProductPriceDTO update(Integer target, ProductPriceDTO info) {
+    public ProductPriceDTO update(Long target, ProductPriceDTO info) {
         ProductPrice temp = repository.getReferenceById(target);
         temp.setPrice(info.getPrice());
         temp.setProduct_id(info.getProduct_id());
@@ -41,7 +41,7 @@ public class ProductPriceService implements EntyService<ProductPriceDTO> {
     }
 
     @Override
-    public void deleteById(Integer target) {
+    public void deleteById(Long target) {
         repository.deleteById(target);
     }
 }

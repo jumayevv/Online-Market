@@ -16,7 +16,7 @@ public class MeasurmentService implements EntyService<MeasurmentDTO> {
         private final MeasurmentREPO repository;
         private final MeasurmentMapper mapper;
     @Override
-    public MeasurmentDTO getById(Integer target) {
+    public MeasurmentDTO getById(Long target) {
         return mapper.toDTO(repository.getReferenceById(target));
     }
 
@@ -31,14 +31,14 @@ public class MeasurmentService implements EntyService<MeasurmentDTO> {
     }
 
     @Override
-    public MeasurmentDTO update(Integer target, MeasurmentDTO info) {
+    public MeasurmentDTO update(Long target, MeasurmentDTO info) {
         Measurment temp = repository.getReferenceById(target);
         temp.setName(info.getName());
         return mapper.toDTO(repository.save(temp));
     }
 
     @Override
-    public void deleteById(Integer target) {
+    public void deleteById(Long target) {
         repository.deleteById(target);
     }
 }

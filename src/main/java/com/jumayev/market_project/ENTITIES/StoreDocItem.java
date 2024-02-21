@@ -2,15 +2,12 @@ package com.jumayev.market_project.ENTITIES;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Builder
-@RequiredArgsConstructor
-@Data
+@AllArgsConstructor
+@NoArgsConstructor@Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "store_document_items")
 @Entity
