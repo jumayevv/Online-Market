@@ -19,6 +19,7 @@ import java.util.Set;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     Long id;
 
     @NotBlank(message = "category name cannot be empty")

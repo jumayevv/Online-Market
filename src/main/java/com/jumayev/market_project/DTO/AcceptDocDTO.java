@@ -13,9 +13,7 @@ import java.time.LocalDate;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class AcceptDocDTO {
     Long id;
-    @NotNull
     Integer doc_number;
-    @NotNull
     Integer organization_id;
     LocalDate date;
 }

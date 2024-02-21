@@ -13,7 +13,6 @@ import lombok.experimental.FieldDefaults;
 public class AcceptDocItemDTO {
 
     Long id;
-
     Integer document_id;
     Product product_id;
     Double price;

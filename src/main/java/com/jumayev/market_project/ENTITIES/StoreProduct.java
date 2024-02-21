@@ -1,6 +1,7 @@
 package com.jumayev.market_project.ENTITIES;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -15,7 +16,9 @@ public class StoreProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    @NotNull(message = "product_id cannot be null")
     Long product_id;
+    @NotNull(message = "amount cannot be null")
     Integer amount;
 
 }

@@ -18,10 +18,9 @@ public class AcceptDoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @NotNull
+    @NotNull(message = "doc number cannot be null")
     Integer doc_number;
-    @NotNull
+    @NotNull(message = "organization id cannot be null")
     Integer organization_id;
-
     LocalDate date = LocalDate.now();
 }

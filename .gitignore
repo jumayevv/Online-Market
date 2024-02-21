@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+src/main/java/com/jumayev/market_project/CONFIG/SecurityConfig.java
+src/main/resources/application-dev.yml

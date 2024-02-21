@@ -13,10 +13,8 @@ public class OrganizationDTO {
     Long id;
 
     String name;
-
     String address;
     String phone_number;
-
     Integer doc_number;
 
 }
