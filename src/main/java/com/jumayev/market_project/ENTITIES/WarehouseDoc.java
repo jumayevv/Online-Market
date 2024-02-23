@@ -7,6 +7,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Builder
 @AllArgsConstructor
@@ -21,6 +22,7 @@ public class WarehouseDoc {
     @Column(nullable = false)
     Long id;
     @NotNull(message = "doc_number cannot be null")
-    Integer doc_number;
+    @OneToMany(mappedBy = "doc_id")
+    Set<WarehouseDItem> doc_number;
     LocalDate date = LocalDate.now(); // default value
 }

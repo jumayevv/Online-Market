@@ -6,6 +6,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Builder
 @AllArgsConstructor
@@ -20,6 +21,7 @@ public class SellDoc {
     @Column(nullable = false)
     Long id;
     @NotNull(message = "doc_number cannot be null")
-    Integer doc_number;
+    @OneToMany(mappedBy = "sell_doc_id")
+    Set<SellDocItem> doc_number;
     LocalDate date = LocalDate.now(); // default value is date time now;
 }

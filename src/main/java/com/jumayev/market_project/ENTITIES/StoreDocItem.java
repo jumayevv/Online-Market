@@ -16,8 +16,10 @@ public class StoreDocItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     Long id;
-    @NotNull(message = "doc_id cannot be null")
-    Integer doc_id;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "doc_number",nullable = false)
+    StoreDoc doc_id;
     @NotNull(message = "produtc_id cannot be null")
     Integer product_id;
     @NotNull(message = "count cannot be null")

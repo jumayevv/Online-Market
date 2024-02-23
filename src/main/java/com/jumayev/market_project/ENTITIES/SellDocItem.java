@@ -21,8 +21,9 @@ public class SellDocItem {
     @Column(nullable = false)
     Long id;
 
-    @NotNull(message = "sell_doc_id cannot be null")
-    Integer sell_doc_id;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "id",nullable = false)
+    SellDoc sell_doc_id;
     @NotNull(message = "store_product_id cannot be null")
     Integer store_product_id;
     @NotNull(message = "count cannot be null")

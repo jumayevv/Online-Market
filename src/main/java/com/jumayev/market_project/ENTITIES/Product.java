@@ -21,7 +21,9 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    Long id;
+    @OneToOne(mappedBy = "produc_id")
+    @JoinColumn(referencedColumnName = "product_id")
+    StoreProduct id;
 
     @Size(min = 2,max = 255,message = "product name length should be between 2 and 255")
     @Pattern(regexp = "[a-zA-Z0-9\\s]+", message = "Name must contain only letters and numbers")

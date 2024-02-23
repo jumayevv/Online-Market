@@ -24,6 +24,7 @@ public class Measurment {
     Long id;
     @NotBlank(message = "measurment name cannot be empty")
     String name;
+
     @OneToMany(mappedBy = "measure_type")
     Set<Product> products;
 }

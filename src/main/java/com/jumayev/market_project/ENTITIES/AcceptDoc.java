@@ -6,6 +6,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Builder
 @Data
@@ -18,6 +19,9 @@ public class AcceptDoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
+    @OneToMany(mappedBy = "id")
+    Set<AcceptDocItem> items;
     @NotNull(message = "doc number cannot be null")
     Integer doc_number;
     @NotNull(message = "organization id cannot be null")
