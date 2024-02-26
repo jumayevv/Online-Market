@@ -1,3 +1,4 @@
+
 package com.jumayev.market_project.ENTITIES;
 
 import jakarta.persistence.*;
@@ -17,9 +18,8 @@ public class ReturnDocItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     Long id;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "doc_number",nullable = false)
-    ReturnDoc return_doc_id;
+    @NotNull(message = "return_doc_id cannot be null")
+    Integer return_doc_id;
     @NotNull(message = "store_doc_id cannot be null")
     Integer store_doc_id;
     @NotNull(message = "count cannot be null")

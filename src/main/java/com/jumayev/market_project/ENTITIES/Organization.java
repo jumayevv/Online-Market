@@ -27,4 +27,4 @@ public class Organization {
     @Size(min = 7,max = 15,message = "phone number length should be between 7 and 15")
     String phone_number;
 
-    }
+}

@@ -5,8 +5,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.Set;
-
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,18 +18,12 @@ public class WarehouseDItem {
     @Column(nullable = false)
     Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "doc_number",nullable = false)
-    WarehouseDoc doc_id;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "product_id",nullable = false)
-    StoreProduct store_product_id;
-
+    @NotNull(message = "doc_id cannot be null")
+    Integer doc_id;
+    @NotNull(message = "store_product_id cannot be null")
+    Integer store_product_id;
     @NotNull(message = "product_id cannot be null")
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "id",nullable = false)
-    Product product_id;
+    Integer product_id;
     @NotNull(message = "count cannot be null")
     Integer count;
 }

@@ -16,14 +16,13 @@ import lombok.experimental.FieldDefaults;
 public class AcceptDocItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "id",nullable = false)
-    AcceptDoc id;
+    @Column(nullable = false)
+    Long id;
     @NotNull
     Integer document_id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "doc_number",nullable = false)
+    @JoinColumn(referencedColumnName = "id",nullable = false)
     Product product_id;
 
     @NotNull

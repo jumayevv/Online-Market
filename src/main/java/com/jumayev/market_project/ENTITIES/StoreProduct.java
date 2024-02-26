@@ -18,9 +18,7 @@ public class StoreProduct {
     Long id;
 
     @NotNull(message = "product_id cannot be null")
-    @OneToOne(mappedBy = "id")
-    Product product_id;
-
+    Long product_id;
     @NotNull(message = "amount cannot be null")
     Integer amount;
 
