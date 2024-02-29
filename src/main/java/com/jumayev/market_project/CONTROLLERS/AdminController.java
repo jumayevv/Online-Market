@@ -1,4 +1,4 @@
-package com.example.basicauthentication.controller;
+package com.jumayev.market_project.CONTROLLERS;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;

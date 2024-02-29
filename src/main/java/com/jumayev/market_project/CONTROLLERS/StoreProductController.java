@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor @RestController @RequestMapping("home/storeproduct")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/storeproduct")
 public class StoreProductController implements EntyController<StoreProductDTO>{
     private final StoreProductService service;
 

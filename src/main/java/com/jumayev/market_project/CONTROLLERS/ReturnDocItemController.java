@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor @RestController @RequestMapping("home/returndocitem")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/returndocitem")
 public class ReturnDocItemController implements EntyController<ReturnDocItemDTO>{
     private final ReturnDocItemService service;
 

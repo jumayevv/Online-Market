@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor @RestController @RequestMapping("home/selldocitem")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/selldocitem")
 public class SellDocItemController implements EntyController<SellDocItemDTO>{
     private final SellDocItemService service;
     @Override

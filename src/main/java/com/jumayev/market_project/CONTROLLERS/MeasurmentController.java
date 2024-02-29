@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor @RestController @RequestMapping("home/measurment")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/measurment")
 public class MeasurmentController implements EntyController<MeasurmentDTO> {
     private final MeasurmentService service;
 

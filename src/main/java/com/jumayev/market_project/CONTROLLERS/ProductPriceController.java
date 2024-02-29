@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor @RestController @RequestMapping("home/productprice")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/productprice")
 public class ProductPriceController implements EntyController<ProductPriceDTO> {
     private final ProductPriceService service;
     @Override

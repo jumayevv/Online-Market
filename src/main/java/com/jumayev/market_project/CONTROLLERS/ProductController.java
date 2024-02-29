@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor @RestController @RequestMapping("home/product")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/product")
 public class ProductController implements EntyController<ProductDTO> {
     private final ProductService service;
 

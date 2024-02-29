@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor @RestController @RequestMapping("/home/acceptdocitem")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/acceptdocitem")
 public class AcceptDocItemController implements EntyController<AcceptDocItemDTO> {
     private final AcceptDocItemService service;
 

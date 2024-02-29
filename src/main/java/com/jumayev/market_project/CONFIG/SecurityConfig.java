@@ -1,5 +1,7 @@
 package com.jumayev.market_project.CONFIG;
 
+import com.jumayev.market_project.ROLES.Role;
+import com.jumayev.market_project.SERVICES.MyUserDetailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,14 +26,19 @@ import org.springframework.security.web.SecurityFilterChain;
 @RequiredArgsConstructor
 public class SecurityConfig {
     private final PasswordEncoder passwordEncoder;
+    private final MyUserDetailService myUserDetailService;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable).
-                        authorizeHttpRequests(auth->auth.
-                        requestMatchers("/home/**").hasRole("admin").
-                        requestMatchers(HttpMethod.GET,"/home/**").hasRole("user").
-                        anyRequest().
+                        authorizeHttpRequests(request->
+                                request.requestMatchers("/api/auth").permitAll().
+                                        requestMatchers("/api/admin").hasRole(Role.ADMIN.name()).
+                                        requestMatchers("/home").hasAnyRole(Role.ADMIN.name(),Role.USER.name()).
+                                        requestMatchers(HttpMethod.GET,"/home/**").hasRole("user").
+                                        requestMatchers(HttpMethod.GET,"/home/**").hasRole("user").
+                                        requestMatchers(HttpMethod.GET,"/home/**").hasRole("user").
+                                anyRequest().
                                 authenticated()).httpBasic(Customizer.withDefaults()).build();
 
     }
@@ -41,7 +48,7 @@ public class SecurityConfig {
     public AuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
         authenticationProvider.setPasswordEncoder(passwordEncoder);
-        authenticationProvider.setUserDetailsService(myUserDetailsService);
+        authenticationProvider.setUserDetailsService(myUserDetailService);
         return authenticationProvider;
     }
     @Bean
@@ -49,19 +56,4 @@ public class SecurityConfig {
         return  configuration.getAuthenticationManager();
     }
 
-
-    @Bean
-    public UserDetailsService userDetailsService(){
-        UserDetails admin_user = User.builder().
-                username("boburjon").
-                password(passwordEncoder.encode("pword1")).
-                roles("admin").
-                build();
-        UserDetails normal_user = User.builder().
-                username("tony").
-                password(passwordEncoder.encode("pword2")).
-                roles("user").
-                build();
-        return new InMemoryUserDetailsManager(admin_user,normal_user);
-    }
 }

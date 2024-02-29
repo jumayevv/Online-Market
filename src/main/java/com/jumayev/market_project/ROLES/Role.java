@@ -1,6 +1,4 @@
-package com.example.basicauthentication.enums;
-
-import jakarta.persistence.Enumerated;
+package com.jumayev.market_project.ROLES;
 
 import java.util.List;
 

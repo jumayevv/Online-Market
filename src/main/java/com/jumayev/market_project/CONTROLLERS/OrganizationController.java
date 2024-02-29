@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor @RestController @RequestMapping("home/organization")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/organization")
 public class OrganizationController implements EntyController<OrganizationDTO> {
     private final OrganizationService service;
 

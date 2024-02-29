@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor @RestController @RequestMapping("home/category")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/category")
 public class CategoryController implements EntyController<CategoryDTO> {
     private final CategoryService service;
 

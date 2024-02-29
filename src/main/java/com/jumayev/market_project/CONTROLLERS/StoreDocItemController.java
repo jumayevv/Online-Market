@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor @RestController @RequestMapping("home/storedocitem")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/storedocitem")
 public class StoreDocItemController implements EntyController<StoreDocItemDTO>{
     private final StoreDocItemService service;
 

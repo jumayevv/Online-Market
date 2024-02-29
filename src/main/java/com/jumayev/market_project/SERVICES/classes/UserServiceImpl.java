@@ -1,18 +1,19 @@
-package com.example.basicauthentication.service.Impl;
+package com.jumayev.market_project.SERVICES.classes;
 
-import com.example.basicauthentication.entity.User;
-import com.example.basicauthentication.repository.UserRepository;
-import com.example.basicauthentication.service.UserService;
+import com.jumayev.market_project.ENTITIES.User;
+import com.jumayev.market_project.REPOSITORIES.UserREPO;
+import com.jumayev.market_project.SERVICES.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
-    private final UserRepository userRepository;
+    private final UserREPO userRepository;
     @Override
     public User create(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));

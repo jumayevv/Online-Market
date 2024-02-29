@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 
-@RequiredArgsConstructor @RestController @RequestMapping("home/warehouseditem")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/warehouseditem")
 public class WarehouseDItemController implements EntyController<WarehouseDItemDTO>{
     private final WarehouseDItemService service;
 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequiredArgsConstructor @RestController @RequestMapping("home/returndoc")
+@RequiredArgsConstructor @RestController @RequestMapping("/api/home/returndoc")
 public class ReturnDocController implements EntyController<ReturnDocDTO> {
     private final ReturnDocService service;
 
